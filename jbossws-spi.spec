@@ -31,7 +31,7 @@ Requires:         java
 Requires:         jboss-logging
 
 %description
-JBoss WS SPI
+JBoss WS SPI classes.
 
 %package javadoc
 Summary:          Javadocs for %{name}
@@ -47,8 +47,11 @@ This package contains the API documentation for %{name}.
 %patch0 -p1
 
 %build
-# testI18NMessage is failing
-mvn-rpmbuild -Dmaven.test.skip=true install javadoc:aggregate
+# tests skipped because testParse fails
+mvn-rpmbuild \
+  -Dmaven.test.skip=true \
+  -Dproject.build.sourceEncoding=UTF-8 \
+  install javadoc:aggregate
 
 %install
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
@@ -76,6 +79,6 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
-* Wed May 2 2012 Patryk Obara <pobara@redhat.com> 2.0.3-1
+* Fri May 4 2012 Patryk Obara <pobara@redhat.com> 2.0.3-1
 - Initial packaging
 
