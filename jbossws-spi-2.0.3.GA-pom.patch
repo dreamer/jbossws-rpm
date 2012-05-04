@@ -1,0 +1,25 @@
+--- jbossws-spi-2.0.3.GA/pom.xml	2012-03-05 09:54:36.598712000 +0100
++++ jbossws-spi-2.0.3.GA-work/pom.xml	2012-05-02 14:18:52.420353236 +0200
+@@ -9,13 +9,6 @@
+ 
+   <version>2.0.3.GA</version>
+ 
+-  <!-- Parent -->
+-  <parent>
+-    <groupId>org.jboss.ws</groupId>
+-    <artifactId>jbossws-parent</artifactId>
+-    <version>1.0.10.GA</version>
+-  </parent>
+-
+   <!-- Source Control Management -->
+   <scm>
+     <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/spi/tags/jbossws-2.0.3.GA</connection>
+@@ -56,7 +49,7 @@
+     </dependency>
+     <dependency>
+       <groupId>org.jboss.logging</groupId>
+-      <artifactId>jboss-logging-spi</artifactId>
++      <artifactId>jboss-logging</artifactId>
+       <version>${jboss-logging-spi.version}</version>
+       <scope>provided</scope>
+     </dependency>

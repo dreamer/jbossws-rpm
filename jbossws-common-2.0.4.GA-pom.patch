@@ -1,0 +1,25 @@
+--- jbossws-common-2.0.4.GA/pom.xml	2012-04-26 12:58:29.653409000 +0200
++++ jbossws-common-2.0.4.GA-work/pom.xml	2012-05-02 13:48:32.340666129 +0200
+@@ -11,13 +11,6 @@
+ 
+   <version>2.0.4.GA</version>
+ 
+-  <!-- Parent -->
+-  <parent>
+-    <groupId>org.jboss.ws</groupId>
+-    <artifactId>jbossws-parent</artifactId>
+-    <version>1.0.10.GA</version>
+-  </parent>
+-
+   <!-- Source Control Management -->
+   <scm>
+     <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/common/tags/jbossws-common-2.0.4.GA</connection>
+@@ -83,7 +76,7 @@
+     </dependency>
+     <dependency>
+       <groupId>org.jboss.logging</groupId>
+-      <artifactId>jboss-logging-spi</artifactId>
++      <artifactId>jboss-logging</artifactId>
+       <version>${jboss-logging-spi.version}</version>
+       <scope>provided</scope>
+     </dependency>
