@@ -27,6 +27,7 @@ BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    jboss-jaxb-intros
 BuildRequires:    jboss-jaxws-2.2-api
+BuildRequires:    jboss-jaxrpc-1.1-api
 BuildRequires:    jboss-logging
 BuildRequires:    jbossws-api
 BuildRequires:    jbossws-spi
