@@ -32,7 +32,7 @@ Requires:         jpackage-utils
 Requires:         java
 
 %description
-JBoss JAXB Introductions
+JBoss JAXB Introductions.
 
 %package javadoc
 Summary:          Javadocs for %{name}
@@ -46,8 +46,9 @@ This package contains the API documentation for %{name}.
 %setup -q -n %{name}-%{namedversion}
 
 %build
-# testI18NMessage is failing
-mvn-rpmbuild -Dmaven.test.skip=true install javadoc:aggregate
+mvn-rpmbuild \
+  -Dproject.build.sourceEncoding=UTF-8 \
+  install javadoc:aggregate
 
 %install
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
@@ -75,6 +76,6 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
-* Wed May 2 2012 Patryk Obara <pobara@redhat.com> 1.0.2-1
+* Fri May 4 2012 Patryk Obara <pobara@redhat.com> 1.0.2-1
 - Initial packaging
 
