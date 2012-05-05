@@ -25,16 +25,29 @@ BuildRequires:    maven-compiler-plugin
 BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
+BuildRequires:    jboss-common-core
+BuildRequires:    jboss-ejb-3.1-api
 BuildRequires:    jboss-jaxb-intros
 BuildRequires:    jboss-jaxws-2.2-api
 BuildRequires:    jboss-jaxrpc-1.1-api
-BuildRequires:    jboss-logging
+BuildRequires:    jboss-jms-1.1-api
+BuildRequires:    jboss-servlet-3.0-api
 BuildRequires:    jbossws-api
 BuildRequires:    jbossws-spi
+BuildRequires:    jboss-logging
 BuildRequires:    wsdl4j
 
 Requires:         jpackage-utils
 Requires:         java
+Requires:         jboss-common-core
+Requires:         jboss-ejb-3.1-api
+Requires:         jboss-jaxb-intros
+Requires:         jboss-jaxws-2.2-api
+Requires:         jboss-jaxrpc-1.1-api
+Requires:         jboss-jms-1.1-api
+Requires:         jboss-servlet-3.0-api
+Requires:         jbossws-api
+Requires:         jbossws-spi
 Requires:         jboss-logging
 
 %description
@@ -54,7 +67,7 @@ This package contains the API documentation for %{name}.
 %patch0 -p1
 
 %build
-# testI18NMessage is failing
+#various fails FIXME describe
 mvn-rpmbuild -Dmaven.test.skip=true install javadoc:aggregate
 
 %install
@@ -83,6 +96,6 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
-* Thu May 3 2012 Patryk Obara <pobara@redhat.com> 2.0.4-1
+* Fri May 4 2012 Patryk Obara <pobara@redhat.com> 2.0.4-1
 - Initial packaging
 
