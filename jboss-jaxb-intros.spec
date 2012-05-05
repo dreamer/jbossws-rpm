@@ -30,6 +30,9 @@ BuildRequires:    jvnet-parent
 
 Requires:         jpackage-utils
 Requires:         java
+Requires:         apache-commons-beanutils
+Requires:         apache-commons-logging
+Requires:         glassfish-jaxb
 
 %description
 JBoss JAXB Introductions.
