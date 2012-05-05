@@ -21,12 +21,14 @@ BuildRequires:    jpackage-utils
 BuildRequires:    java-devel
 BuildRequires:    maven
 BuildRequires:    maven-compiler-plugin
+BuildRequires:    maven-enforcer-plugin
 BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    maven-source-plugin
 BuildRequires:    maven-plugin-cobertura
 BuildRequires:    maven-plugin-cobertura-javadoc
+BuildRequires:    jboss-specs-parent
 
 Requires:         jpackage-utils
 Requires:         java
