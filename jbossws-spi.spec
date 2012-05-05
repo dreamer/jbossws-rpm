@@ -24,11 +24,17 @@ BuildRequires:    maven-compiler-plugin
 BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
+BuildRequires:    jboss-jms-1.1-api
 BuildRequires:    jboss-logging
+BuildRequires:    jboss-servlet-3.0-api
+BuildRequires:    jbossws-api
 
 Requires:         jpackage-utils
 Requires:         java
+Requires:         jboss-jms-1.1-api
 Requires:         jboss-logging
+Requires:         jboss-servlet-3.0-api
+Requires:         jbossws-api
 
 %description
 JBoss WS SPI classes.
