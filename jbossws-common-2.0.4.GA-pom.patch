@@ -1,5 +1,5 @@
 --- jbossws-common-2.0.4.GA/pom.xml	2012-04-26 12:58:29.653409000 +0200
-+++ jbossws-common-2.0.4.GA-work/pom.xml	2012-05-04 18:35:24.770626393 +0200
++++ jbossws-common-2.0.4.GA-work/pom.xml	2012-05-07 12:01:02.384717548 +0200
 @@ -11,13 +11,6 @@
  
    <version>2.0.4.GA</version>
@@ -14,18 +14,15 @@
    <!-- Source Control Management -->
    <scm>
      <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/common/tags/jbossws-common-2.0.4.GA</connection>
-@@ -35,8 +28,10 @@
+@@ -35,6 +28,7 @@
      <ejb.api.version>1.0.0.CR2</ejb.api.version>
      <jms.api.version>1.0.0.Final</jms.api.version>
      <jaxws.api.version>1.0.0.Final</jaxws.api.version>
 +    <jaxrpc.api.version>1.0.1.Final</jaxrpc.api.version>
      <junit.version>3.8.2</junit.version>
      <servlet.api.version>1.0.0.Final</servlet.api.version>
-+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
    </properties>
- 
-   <!-- Dependencies -->
-@@ -65,6 +60,11 @@
+@@ -65,6 +59,11 @@
      </dependency>
      <!-- Non transient dependencies -->
      <dependency>
@@ -37,7 +34,7 @@
        <groupId>org.jboss.spec.javax.xml.ws</groupId>
        <artifactId>jboss-jaxws-api_2.2_spec</artifactId>
        <version>${jaxws.api.version}</version>
-@@ -83,7 +83,7 @@
+@@ -83,7 +82,7 @@
      </dependency>
      <dependency>
        <groupId>org.jboss.logging</groupId>

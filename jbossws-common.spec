@@ -67,8 +67,11 @@ This package contains the API documentation for %{name}.
 %patch0 -p1
 
 %build
-#various fails FIXME describe
-mvn-rpmbuild -Dmaven.test.skip=true install javadoc:aggregate
+# many tests fail
+mvn-rpmbuild \
+    -Dproject.build.sourceEncoding=UTF-8 \
+    -Dmaven.test.skip=true \
+    install javadoc:aggregate
 
 %install
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
