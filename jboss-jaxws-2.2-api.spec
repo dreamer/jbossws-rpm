@@ -14,7 +14,8 @@ URL:              http://www.jboss.org/
 # git archive jboss-jaxws-api_2.2_spec-2.0.1.Final --prefix=jboss-jaxws-2.2-api-2.0.1.Final/ --format=tar.gz --output=../jboss-jaxws-2.2-api-2.0.1.Final.tar.gz
 
 Source0:          %{name}-%{namedversion}.tar.gz
-Source1:          %{name}-%{namedversion}-license.txt
+
+Patch0:           0001-Update-license-field-in-pom-and-add-original-license.patch
 
 BuildArch:        noarch
 
@@ -47,7 +48,7 @@ This package contains the API documentation for %{name}.
 %prep
 %setup -q -n %{name}-%{namedversion}
 
-cp %{SOURCE1} src/main/resources/LICENSE.txt
+%patch0 -p1
 
 %build
 mvn-rpmbuild install javadoc:aggregate
