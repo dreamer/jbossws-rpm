@@ -1,8 +1,8 @@
-%global namedreltag .Final
+%global namedreltag .20120507gitd6937f
 %global namedversion %{version}%{?namedreltag}
 
 Name:             jboss-jaxws-2.2-api
-Version:          2.0.1
+Version:          2.0.2
 Release:          1%{?dist}
 Summary:          Java API for XML-Based Web Services 2.2
 Group:            Development/Libraries
@@ -10,12 +10,9 @@ License:          CDDL or GPLv2 with exceptions
 URL:              http://www.jboss.org/
 
 # git clone git://github.com/jboss/jboss-jaxws-api_spec.git jboss-jaxws-api
-# cd jboss-jaxws-api
-# git archive jboss-jaxws-api_2.2_spec-2.0.1.Final --prefix=jboss-jaxws-2.2-api-2.0.1.Final/ --format=tar.gz --output=../jboss-jaxws-2.2-api-2.0.1.Final.tar.gz
+# cd jboss-jaxws-api && git archive --format=tar --prefix=jboss-jaxws-2.2-api/ d6937fd2ebf76bfa8ea4706d6b50a172dbda9f9e | xz > jboss-jaxws-2.2-api-2.0.2.20120507gitd6937f.tar.xz
 
-Source0:          %{name}-%{namedversion}.tar.gz
-
-Patch0:           0001-Update-license-field-in-pom-and-add-original-license.patch
+Source0:          %{name}-%{namedversion}.tar.xz
 
 BuildArch:        noarch
 
@@ -46,9 +43,7 @@ Requires:         jpackage-utils
 This package contains the API documentation for %{name}.
 
 %prep
-%setup -q -n %{name}-%{namedversion}
-
-%patch0 -p1
+%setup -q -n %{name}
 
 %build
 mvn-rpmbuild install javadoc:aggregate
@@ -59,7 +54,7 @@ install -d -m 755 $RPM_BUILD_ROOT%{_mavenpomdir}
 install -d -m 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 
 # JAR
-install -pm 644 target/jboss-jaxws-api_2.2_spec-%{namedversion}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+install -pm 644 target/jboss-jaxws-api_2.2_spec-%{version}.Final-SNAPSHOT.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 
 # POM
 install -pm 644 pom.xml $RPM_BUILD_ROOT%{_mavenpomdir}/JPP-%{name}.pom
