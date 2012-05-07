@@ -3,7 +3,7 @@
 
 Name:             jboss-jaxws-2.2-api
 Version:          2.0.2
-Release:          1%{?dist}
+Release:          0.1%{namedreltag}%{?dist}
 Summary:          Java API for XML-Based Web Services 2.2
 Group:            Development/Libraries
 License:          CDDL or GPLv2 with exceptions
@@ -80,6 +80,6 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc src/main/resources/NOTE.txt
 
 %changelog
-* Mon May 7 2012 Patryk Obara <pobara@redhat.com> 2.0.1-1
+* Mon May 7 2012 Patryk Obara <pobara@redhat.com> 2.0.2-0.1.20120507gitd6937f
 - Initial packaging
 
