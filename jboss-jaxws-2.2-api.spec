@@ -2,7 +2,7 @@
 %global namedversion %{version}%{?namedreltag}
 
 Name:             jboss-jaxws-2.2-api
-Version:          1.0.0
+Version:          2.0.1
 Release:          1%{?dist}
 Summary:          Java API for XML-Based Web Services 2.2
 Group:            Development/Libraries
@@ -11,7 +11,8 @@ URL:              http://www.jboss.org/
 
 # git clone git://github.com/jboss/jboss-jaxws-api_spec.git jboss-jaxws-api
 # cd jboss-jaxws-api
-# git archive jboss-jaxws-api_2.2_spec-1.0.0.Final --prefix=jboss-jaxws-2.2-api-1.0.0.Final/ --format=tar.gz --output=../jboss-jaxws-2.2-api-1.0.0.Final.tar.gz
+# git archive jboss-jaxws-api_2.2_spec-2.0.1.Final --prefix=jboss-jaxws-2.2-api-2.0.1.Final/ --format=tar.gz --output=../jboss-jaxws-2.2-api-2.0.1.Final.tar.gz
+
 Source0:          %{name}-%{namedversion}.tar.gz
 Source1:          %{name}-%{namedversion}-license.txt
 
@@ -27,7 +28,6 @@ BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    maven-source-plugin
 BuildRequires:    maven-plugin-cobertura
-BuildRequires:    maven-plugin-cobertura-javadoc
 BuildRequires:    jboss-specs-parent
 
 Requires:         jpackage-utils
@@ -47,7 +47,7 @@ This package contains the API documentation for %{name}.
 %prep
 %setup -q -n %{name}-%{namedversion}
 
-cp $RPM_SOURCE_DIR/%{name}-%{namedversion}-license.txt src/main/resources/LICENSE.txt
+cp %{SOURCE1} src/main/resources/LICENSE.txt
 
 %build
 mvn-rpmbuild install javadoc:aggregate
@@ -84,6 +84,6 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc src/main/resources/NOTE.txt
 
 %changelog
-* Fri May 4 2012 Patryk Obara <pobara@redhat.com> 1.0.0-1
+* Mon May 7 2012 Patryk Obara <pobara@redhat.com> 2.0.1-1
 - Initial packaging
 
