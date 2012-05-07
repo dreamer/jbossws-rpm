@@ -80,6 +80,9 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %files javadoc
 %{_javadocdir}/%{name}
 
+%doc src/main/resources/LICENSE.txt
+%doc src/main/resources/NOTE.txt
+
 %changelog
 * Fri May 4 2012 Patryk Obara <pobara@redhat.com> 1.0.0-1
 - Initial packaging
