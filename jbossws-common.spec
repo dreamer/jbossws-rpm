@@ -22,6 +22,7 @@ BuildRequires:    jpackage-utils
 BuildRequires:    java-devel
 BuildRequires:    maven
 BuildRequires:    maven-compiler-plugin
+BuildRequires:    maven-dependency-plugin
 BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
